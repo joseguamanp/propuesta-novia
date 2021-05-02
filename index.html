@@ -19,7 +19,7 @@
   crossorigin="anonymous"></script>
 <style>
     .relativeContainer {
-      position: relative;
+      /*position: relative;*/
       width: 500px;
       height: 500px;
     }
@@ -88,8 +88,8 @@ var app = new Vue({
                 this.moverboton();
             },
             moverboton(){ 
-              this.estilos.top = `${Math.random() * 500}px`;
-              this.estilos.left = `${Math.random() * 500}px`;
+              this.estilos.top = `${Math.random() * 400}px`;
+              this.estilos.left = `${Math.random() * 400}px`;
             },
             abrirmodal(){
               $("#exampleModal").modal("show")
