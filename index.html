@@ -19,9 +19,9 @@
   crossorigin="anonymous"></script>
 <style>
     .relativeContainer {
-      /*position: relative;*/
-      width: 500px;
-      height: 500px;
+      position: relative;
+      width: 350px;
+      height: 515px;
     }
     #botonQueSeMueve {
       position: absolute;
@@ -32,19 +32,19 @@
 </head>
 
 <body>
-    <div id="app" class="container">
+    <div id="app" class="container relativeContainer alert-warning">
         <div class="row">
           <div class="col-md-12">
             <h3 class="text-center">{{pregunta}}</h3>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 text-center">
-            <div class="relativeContainer alert-warning">
+          <div class="col-md-12 col-sm-12 text-center">
+            <div class="">
               <button type="button" class="btn btn-success" style="margin-right: 3px;" @click="abrirmodal">
                 Si
               </button>
-              <button class="btn btn-danger" id="botonQueSeMueve" :style="estilos" @mouseover="mouseover()" >
+              <button class="btn btn-danger" id="botonQueSeMueve" :style="estilos" @mouseover="moverboton()" >
                 No
               </button>
               <img width="100%" :src="imagen.novio" alt="img novio">
@@ -83,13 +83,9 @@ var app = new Vue({
             }
         },
         methods:{
-            mouseover(){
-                console.log("wii");
-                this.moverboton();
-            },
             moverboton(){ 
-              this.estilos.top = `${Math.random() * 400}px`;
-              this.estilos.left = `${Math.random() * 400}px`;
+              this.estilos.top = `${Math.random() * 500}px`;
+              this.estilos.left = `${Math.random() * 320}px`;
             },
             abrirmodal(){
               $("#exampleModal").modal("show")
